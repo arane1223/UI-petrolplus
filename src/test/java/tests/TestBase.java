@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import config.CredentialsConfig;
+import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
@@ -28,9 +29,10 @@ public class TestBase {
     @BeforeAll
     static void setUp() {
         Configuration.pageLoadStrategy = "eager";
-        Configuration.baseUrl = "https://www.petrolplus.ru";
-        Configuration.browser = "chrome";
-        Configuration.browserSize = "1920x1080";
+        Configuration.baseUrl = System.getProperty("browserSize"); //"https://www.petrolplus.ru"
+        Configuration.browser = System.getProperty("browser");
+        Configuration.browserVersion = System.getProperty("browserVersion");
+        Configuration.browserSize = System.getProperty("browserSize");
         String login = config.login();
         String password = config.password();
         String webDriverHost = System.getProperty("webDriverHost");
@@ -50,6 +52,10 @@ public class TestBase {
 
     @AfterEach
     void addAttach() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
         Selenide.closeWebDriver();
     }
 }
