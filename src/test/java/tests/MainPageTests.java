@@ -12,13 +12,13 @@ import org.junit.jupiter.api.Test;
 import static io.qameta.allure.Allure.step;
 
 @Tag("mainPage")
+@Owner("sergeyglukhov")
 @DisplayName("UI тесты для главной страницы petrolplus")
 public class MainPageTests extends TestBase{
 
     @Test
     @Feature("Действия на главной странице")
     @Story("Нажатие на кнопку «Оставить заявку»")
-    @Owner("sergeyglukhov")
     @Link(value = "MainPage", url = "https://www.petrolplus.ru/")
     @DisplayName("После клика на кнопку «Оставить заявку» происходит скроллинг к форме сбора заявок")
     void whenClickButtonSubmitApplicationThenScrollToApplicationForm() {
@@ -42,7 +42,6 @@ public class MainPageTests extends TestBase{
     @Test
     @Feature("Действия на главной странице")
     @Story("Переход в «Личный кабинет»")
-    @Owner("sergeyglukhov")
     @Link(value = "MainPage", url = "https://www.petrolplus.ru/")
     @DisplayName("После клика на кнопку «Личный кабинет», мы попадаем на страницу входа в личный кабинет")
     void whenWeClickButtonPersonalAccountThenGoToLoginPageInNewWindow() {
@@ -66,7 +65,6 @@ public class MainPageTests extends TestBase{
     @Test
     @Feature("Действия на главной странице")
     @Story("Переход на карту АЗС")
-    @Owner("sergeyglukhov")
     @Link(value = "MainPage", url = "https://www.petrolplus.ru/")
     @DisplayName("После клика на баннер «Самая широкая сесть АЗС» мы переходим на страницу с картой АЗС")
     void whenClickOnFuelStationsBannerThenGoToFuelStationsMap() {
@@ -88,7 +86,6 @@ public class MainPageTests extends TestBase{
     @Tag("calc")
     @Feature("Блок с калькулятором")
     @Story("Изменение полей «Тип машин» и «Количество машин»")
-    @Owner("sergeyglukhov")
     @Link(value = "MainPage", url = "https://www.petrolplus.ru/")
     @DisplayName("При изменении в калькуляторе полей «Тип машин» и «Количество машин», результат меняется")
     void whenChangeValuesInCalcThenResultChangesToo() {
@@ -119,7 +116,6 @@ public class MainPageTests extends TestBase{
     @Tag("calc")
     @Feature("Блок с калькулятором")
     @Story("Изменение результата с изменением галочек")
-    @Owner("sergeyglukhov")
     @Link(value = "MainPage", url = "https://www.petrolplus.ru/")
     @DisplayName("Если убрать все галочки в калькуляторе, то результат будет 0")
     void whenDeleteAllTypesOfServicesInCalcThenResultShouldBe0() {
@@ -140,7 +136,6 @@ public class MainPageTests extends TestBase{
     @Tag("calc")
     @Feature("Блок с калькулятором")
     @Story("Нажатие на кнопку «Хочу так»")
-    @Owner("sergeyglukhov")
     @Link(value = "MainPage", url = "https://www.petrolplus.ru/")
     @DisplayName("При нажатии в калькуляторе на кнопку «Хочу так» происходит скроллинг к форме сбора заявок")
     void whenClickButtonWantSoInCalcThenScrollToApplicationForm() {

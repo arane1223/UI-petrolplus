@@ -1,7 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import pages.components.CalcComponents;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -20,8 +19,6 @@ public class MainPage {
     protected String
             appFormHeadingText = "Ответим на все вопросы и подберём услуги",
             introBannerFuelStationMapText = "Самая широкая сеть АЗС";
-
-    CalcComponents calcComponents = new CalcComponents();
 
     public MainPage openPage() {
         open("/");
