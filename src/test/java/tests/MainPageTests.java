@@ -101,17 +101,17 @@ public class MainPageTests extends TestBase{
 
         step("Проверяем исходное значение 58 093", () -> {
             calcComponents
-                    .checkingDefaultCalcResult("58 093");
+                    .checkingDefaultCalcResult("58,093");
         });
 
         step("Меняем тип машин на «Коммерческий», и проверяем, что значение изменилось на 132 270", () -> {
             calcComponents
-                    .changingCarsTypeAndCheckCalkResult("Коммерческий", "132 270");
+                    .changingCarsTypeAndCheckCalkResult("Коммерческий", "132,270");
         });
 
         step("Меняем количество машин на «2-5», и проверяем, что значение изменилось на 138 752", () -> {
             calcComponents
-                    .changingCarsCountAndCheckResult("2-5", "138 752");
+                    .changingCarsCountAndCheckResult("2-5", "138,752");
         });
     }
 
