@@ -29,7 +29,7 @@ public class TestBase {
     @BeforeAll
     static void setUp() {
         Configuration.pageLoadStrategy = "eager";
-        Configuration.baseUrl = System.getProperty("browserSize"); //"https://www.petrolplus.ru"
+        Configuration.baseUrl = System.getProperty("baseUrl");
         Configuration.browser = System.getProperty("browser");
         Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.browserSize = System.getProperty("browserSize");
