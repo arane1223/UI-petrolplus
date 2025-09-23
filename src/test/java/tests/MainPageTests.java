@@ -1,16 +1,26 @@
 package tests;
 
 import com.codeborne.selenide.Selenide;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Link;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
+@Tag("mainPage")
 @DisplayName("UI тесты для главной страницы petrolplus")
 public class MainPageTests extends TestBase{
 
-    @DisplayName("После клика на кнопку «Оставить заявку» происходит скроллинг к форме сбора заявок")
     @Test
+    @Feature("Действия на главной странице")
+    @Story("Нажатие на кнопку «Оставить заявку»")
+    @Owner("sergeyglukhov")
+    @Link(value = "MainPage", url = "https://www.petrolplus.ru/")
+    @DisplayName("После клика на кнопку «Оставить заявку» происходит скроллинг к форме сбора заявок")
     void whenClickButtonSubmitApplicationThenScrollToApplicationForm() {
 
         step("Открываем главную страницу", () -> {
@@ -29,8 +39,12 @@ public class MainPageTests extends TestBase{
         });
     }
 
-    @DisplayName("После клика на кнопку «Личный кабинет», мы попадаем на страницу входа в личный кабинет")
     @Test
+    @Feature("Действия на главной странице")
+    @Story("Переход в «Личный кабинет»")
+    @Owner("sergeyglukhov")
+    @Link(value = "MainPage", url = "https://www.petrolplus.ru/")
+    @DisplayName("После клика на кнопку «Личный кабинет», мы попадаем на страницу входа в личный кабинет")
     void whenWeClickButtonPersonalAccountThenGoToLoginPageInNewWindow() {
 
         step("Открываем главную страницу и жмем на кнопку «Личный кабинет»", () -> {
@@ -49,8 +63,12 @@ public class MainPageTests extends TestBase{
         });
     }
 
-    @DisplayName("После клика на баннер «Самая широкая сесть АЗС» мы переходим на страницу с картой АЗС")
     @Test
+    @Feature("Действия на главной странице")
+    @Story("Переход на карту АЗС")
+    @Owner("sergeyglukhov")
+    @Link(value = "MainPage", url = "https://www.petrolplus.ru/")
+    @DisplayName("После клика на баннер «Самая широкая сесть АЗС» мы переходим на страницу с картой АЗС")
     void whenClickOnFuelStationsBannerThenGoToFuelStationsMap() {
 
         step("Открываем страницу и жмем на баннер «Самая широкая сесть АЗС»", () -> {
@@ -66,8 +84,13 @@ public class MainPageTests extends TestBase{
         });
     }
 
-    @DisplayName("При изменении в калькуляторе полей «Тип машин» и «Количество машин», результат меняется")
     @Test
+    @Tag("calc")
+    @Feature("Блок с калькулятором")
+    @Story("Изменение полей «Тип машин» и «Количество машин»")
+    @Owner("sergeyglukhov")
+    @Link(value = "MainPage", url = "https://www.petrolplus.ru/")
+    @DisplayName("При изменении в калькуляторе полей «Тип машин» и «Количество машин», результат меняется")
     void whenChangeValuesInCalcThenResultChangesToo() {
 
         step("Открываем главную страницу и скроллим в блок с калькулятором", () -> {
@@ -92,8 +115,13 @@ public class MainPageTests extends TestBase{
         });
     }
 
-    @DisplayName("Если убрать все галочки в калькуляторе, то результат будет 0")
     @Test
+    @Tag("calc")
+    @Feature("Блок с калькулятором")
+    @Story("Изменение результата с изменением галочек")
+    @Owner("sergeyglukhov")
+    @Link(value = "MainPage", url = "https://www.petrolplus.ru/")
+    @DisplayName("Если убрать все галочки в калькуляторе, то результат будет 0")
     void whenDeleteAllTypesOfServicesInCalcThenResultShouldBe0() {
 
         step("Открываем главную страницу и скроллим в блок с калькулятором", () -> {
@@ -108,8 +136,13 @@ public class MainPageTests extends TestBase{
         });
     }
 
-    @DisplayName("При нажатии в калькуляторе на кнопку «Хочу так» происходит скроллинг к форме сбора заявок")
     @Test
+    @Tag("calc")
+    @Feature("Блок с калькулятором")
+    @Story("Нажатие на кнопку «Хочу так»")
+    @Owner("sergeyglukhov")
+    @Link(value = "MainPage", url = "https://www.petrolplus.ru/")
+    @DisplayName("При нажатии в калькуляторе на кнопку «Хочу так» происходит скроллинг к форме сбора заявок")
     void whenClickButtonWantSoInCalcThenScrollToApplicationForm() {
 
         step("Открываем главную страницу и скроллим в блок с калькулятором", () -> {
