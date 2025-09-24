@@ -1,6 +1,7 @@
 package pages.components;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -14,25 +15,21 @@ public class CalcComponents {
             carsCount = $("#cars-count"),
             eCalcSubmitButton = $(".e-calc__submit");
 
-    public CalcComponents checkingDefaultCalcResult(String defaultResult) {
-        eCalcResult.shouldHave(text(defaultResult));
-        return this;
-    }
-
-    public  CalcComponents changingCarsTypeAndCheckCalkResult(String carsTypeValue, String result) {
+    @Step("Меняем тип машин")
+    public  CalcComponents changingCarsType(String carsTypeValue) {
         carsType.click();
         $(byText(carsTypeValue)).click();
-        checkingCalcResults(result);
         return this;
     }
 
-    public CalcComponents changingCarsCountAndCheckResult(String carsCountValue, String result) {
+    @Step("Меняем количество машин")
+    public CalcComponents changingCarsCount(String carsCountValue) {
         carsCount.click();
         $(byText(carsCountValue)).click();
-        checkingCalcResults(result);
         return this;
     }
 
+    @Step("Снимаем галочки со всех типов услуг")
     public CalcComponents removingAllCheckmarks() {
         $(byText("Топливо")).click();
         $(byText("Мойки")).click();
@@ -46,11 +43,13 @@ public class CalcComponents {
         return this;
     }
 
+    @Step("Проверяем результат в калькуляторе")
     public CalcComponents checkingCalcResults (String result) {
         eCalcResult.shouldHave(text(result));
         return this;
     }
 
+    @Step("Жмем на кнопку «Хочу так»")
     public CalcComponents clickOnCalcSubmit() {
         eCalcSubmitButton.click();
         return this;
