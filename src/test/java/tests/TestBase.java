@@ -3,10 +3,8 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import config.CredentialsConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,7 +22,6 @@ public class TestBase {
     LoginPage loginPage = new LoginPage();
     FuelStationsMapPage fuelStationsMapPage = new FuelStationsMapPage();
     CalcComponents calcComponents = new CalcComponents();
-    static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
 
     @BeforeAll
     static void setUp() {
@@ -33,10 +30,7 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser");
         Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.browserSize = System.getProperty("browserSize");
-        String login = config.login();
-        String password = config.password();
-        String webDriverHost = System.getProperty("webDriverHost");
-        Configuration.remote = "https://" + login + ":" + password + "@" + webDriverHost + "/wd/hub";
+        Configuration.remote = System.getProperty("remoteUrl");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
