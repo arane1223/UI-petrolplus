@@ -17,15 +17,8 @@ public class CalcComponents {
             eCalcSubmitButton = $(".e-calc__submit");
 
     protected String[] services = {
-            "Топливо",
-            "Мойки",
-            "Ремонт и ТО",
-            "Шиномонтаж",
-            "Штрафы",
-            "Парковки",
-            "Платные дороги",
-            "ОСАГО",
-            "КАСКО"
+            "Топливо", "Мойки", "Ремонт и ТО", "Шиномонтаж", "Штрафы",
+            "Парковки", "Платные дороги", "ОСАГО", "КАСКО"
     };
 
     @Step("Меняем тип машин")
@@ -47,15 +40,6 @@ public class CalcComponents {
         for (String service : services) {
             eCalk.$(byText(service)).click();
         }
-//        $(byText("Топливо")).click();
-//        $(byText("Мойки")).click();
-//        $(byText("Ремонт и ТО")).click();
-//        $(byText("Шиномонтаж")).click();
-//        $(byText("Штрафы")).click();
-//        $(byText("Парковки")).click();
-//        $(byText("Платные дороги")).click();
-//        $("#e-calc").$(byText("ОСАГО")).click();
-//        $("#e-calc").$(byText("КАСКО")).click();
         return this;
     }
 
