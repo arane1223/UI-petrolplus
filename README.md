@@ -72,6 +72,9 @@ ${TASK}
 ```
 
 ## :point_up_2: Allure отчет
+
+[Allure отчет](https://jenkins.autotests.cloud/job/UI-petrolplus/allure/)
+
 - ### Главный экран отчета
 <p>
 <img title="Allure report" src="images/screenshots/allure-report.png">
@@ -83,6 +86,9 @@ ${TASK}
 </p>
 
 ## :point_up_2: Интеграция с Allure TestOps
+
+[Проект в Allure TestOps](https://allure.autotests.cloud/project/4926/dashboards)
+
 - ### Экран с результатами запуска тестов
 <p>
 <img title="Allure TestOps" src="images/screenshots/allure-test-ops-lounchs.png">
@@ -99,6 +105,9 @@ ${TASK}
 </p>
 
 ## :point_up_2: Интеграция с Jira
+
+[Задача в Jira](https://jira.autotests.cloud/browse/HOMEWORK-1500)
+
 - ### Страница с задачей в Jira
 <p>
 <img title="Jira task description" src="images/screenshots/jira-task.png">
