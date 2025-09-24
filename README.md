@@ -62,13 +62,13 @@ gradle clean mainPage
 ```
 Удаленный запуск:
 ```
-clean 
-${TASK} 
+clean ${TASK} 
 -DbaseUrl=${BASE_URL}
 -Dbrowser=${BROWSER}
 -DbrowserVersion=${BROWSER_VERSION}
 -DbrowserSize=${BROWSER_SIZE} 
 -DwebDriverHost=${WEB_DRIVER_HOST}
+-DremoteUrl=https://${AUTH}@${WEB_DRIVER_HOST}/wd/hub
 ```
 
 ## :point_up_2: Allure отчет
