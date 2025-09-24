@@ -18,7 +18,7 @@ public class CalcComponents {
             carsCount = $("#cars-count"),
             eCalcSubmitButton = $(".e-calc__submit");
 
-    List<String> services = List.of(
+    protected List<String> services = List.of(
             "Топливо", "Мойки", "Ремонт и ТО", "Шиномонтаж", "Штрафы",
             "Парковки", "Платные дороги", "ОСАГО", "КАСКО");
 
