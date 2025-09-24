@@ -3,6 +3,8 @@ package pages.components;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import java.util.List;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -16,10 +18,9 @@ public class CalcComponents {
             carsCount = $("#cars-count"),
             eCalcSubmitButton = $(".e-calc__submit");
 
-    protected String[] services = {
+    List<String> services = List.of(
             "Топливо", "Мойки", "Ремонт и ТО", "Шиномонтаж", "Штрафы",
-            "Парковки", "Платные дороги", "ОСАГО", "КАСКО"
-    };
+            "Парковки", "Платные дороги", "ОСАГО", "КАСКО");
 
     @Step("Меняем тип машин")
     public  CalcComponents changingCarsType(String carsTypeValue) {
