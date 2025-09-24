@@ -11,9 +11,22 @@ public class CalcComponents {
 
     protected SelenideElement
             eCalcResult = $("#e-calc-total"),
+            eCalk = $("#e-calc"),
             carsType = $("#cars-type"),
             carsCount = $("#cars-count"),
             eCalcSubmitButton = $(".e-calc__submit");
+
+    protected String[] services = {
+            "Топливо",
+            "Мойки",
+            "Ремонт и ТО",
+            "Шиномонтаж",
+            "Штрафы",
+            "Парковки",
+            "Платные дороги",
+            "ОСАГО",
+            "КАСКО"
+    };
 
     @Step("Меняем тип машин")
     public  CalcComponents changingCarsType(String carsTypeValue) {
@@ -31,15 +44,18 @@ public class CalcComponents {
 
     @Step("Снимаем галочки со всех типов услуг")
     public CalcComponents removingAllCheckmarks() {
-        $(byText("Топливо")).click();
-        $(byText("Мойки")).click();
-        $(byText("Ремонт и ТО")).click();
-        $(byText("Шиномонтаж")).click();
-        $(byText("Штрафы")).click();
-        $(byText("Парковки")).click();
-        $(byText("Платные дороги")).click();
-        $("#e-calc").$(byText("ОСАГО")).click();
-        $("#e-calc").$(byText("КАСКО")).click();
+        for (String service : services) {
+            eCalk.$(byText(service)).click();
+        }
+//        $(byText("Топливо")).click();
+//        $(byText("Мойки")).click();
+//        $(byText("Ремонт и ТО")).click();
+//        $(byText("Шиномонтаж")).click();
+//        $(byText("Штрафы")).click();
+//        $(byText("Парковки")).click();
+//        $(byText("Платные дороги")).click();
+//        $("#e-calc").$(byText("ОСАГО")).click();
+//        $("#e-calc").$(byText("КАСКО")).click();
         return this;
     }
 
